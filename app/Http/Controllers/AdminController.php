@@ -117,6 +117,6 @@ class AdminController extends Controller
       'image' => $filenameSave,
       'status' => 3
     ]);
-    return redirect()->route('dashboard')->with('success', 'Pembayaran Berhasil Dilakukan');
+    return redirect()->route('indexPayment')->with('success', 'Pembayaran Berhasil Dilakukan');
   }
 }

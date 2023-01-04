@@ -6,6 +6,13 @@
             <div class="section-header-breadcrumb">
             </div>
         </div>
+        @if (Auth::user()->role == 'user')
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ $message }}
+                </div>
+            @endif
+        @endif
         <div class="section-body">
             <h3 class="section-title">Pembayaran</h3>
             <form method="POST" action="{{ route('paymentStore') }}" enctype="multipart/form-data">
@@ -20,8 +27,7 @@
                                 <div class="row mb-3">
                                     <div class="col-sm-4">
                                         <label>Nama Rekening Bank</label>
-                                        <select class="form-control" name="bank_name" id="nama_bank"
-                                            onchange="show()">
+                                        <select class="form-control" name="bank_name" id="nama_bank" onchange="show()">
                                             <option></option>
                                             <option>esempe 1</option>
                                             <option>esempe 2</option>

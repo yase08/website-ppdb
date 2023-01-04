@@ -13,13 +13,6 @@
         <div class="section-body">
             <h3 class="section-title">Hi, {{ Auth::user()->name }}</h3>
         </div>
-        @if (Auth::user()->role == 'user')
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ $message }}
-                </div>
-            @endif
-        @endif
 
         @if (isset($item->status))
             @if ($item->status == 3)
